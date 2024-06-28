@@ -1,5 +1,6 @@
 FROM ubuntu:20.04   as   build
 
+ARG gitUrl1="https://github.com/lets2dance/qx_video.git"
 ARG gitUrl="https://gitee.com/pan648540858"
 ARG zlmGitUrl="https://gitee.com/xia-chu/ZLMediaKit"
 
@@ -14,7 +15,7 @@ RUN cd /home && \
         cp maven/settings.xml /usr/share/maven/conf/
 
 RUN cd /home && \
-        git clone "${gitUrl}/wvp-GB28181-pro.git"
+        git clone "${gitUrl1}"
 RUN cd /home/wvp-GB28181-pro/web_src && \
         npm install && \
         npm run build
