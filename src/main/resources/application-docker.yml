@@ -26,9 +26,9 @@ spring:
                 master:
                     type: com.zaxxer.hikari.HikariDataSource
                     driver-class-name: com.mysql.cj.jdbc.Driver
-                    url: jdbc:mysql://127.0.0.1:3306/wvp2?useUnicode=true&characterEncoding=UTF8&rewriteBatchedStatements=true&serverTimezone=PRC&useSSL=false&allowMultiQueries=true
-                    username: root
-                    password: Bj@19921006
+                    url: jdbc:mysql://${MYSQL_HOST:127.0.0.1}:${MYSQL_PORT:3306}/wvp2?useUnicode=true&characterEncoding=UTF8&rewriteBatchedStatements=true&serverTimezone=PRC&useSSL=false&allowMultiQueries=true
+                    username: ${MYSQL_USER:root}
+                    password: ${MYSQL_PWD:root}
                     hikari:
                         connection-timeout: 20000             # 是客户端等待连接池连接的最大毫秒数
                         initialSize: 50                       # 连接池初始化连接数
